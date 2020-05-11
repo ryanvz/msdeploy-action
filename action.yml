@@ -1,0 +1,24 @@
+name: 'Build and Package C# Project'
+description: 'Uses msdeploy to deploy a package to an IIS site'
+inputs:
+  zip:
+    description: 'Path to the zip to deploy'
+    required: true
+  site:
+    description: 'Name of the site in IIS'
+    required: true
+  server:
+    description: 'Domain or IP of the server to deploy to'
+    required: true
+  user:
+    description: 'Username for msdeploy basic auth'
+    required: true
+  password:
+    description: 'Password for msdeploy basic auth'
+    required: true
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
+branding:
+  icon: meh
+  color: purple
